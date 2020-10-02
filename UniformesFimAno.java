@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -5,11 +6,13 @@ import java.util.Scanner;
 
 public class UniformesFimAno {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 
 		Scanner scr = new Scanner(System.in);
 		
 		List<String> saida = new ArrayList<>() {
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			public String toString() {
 				StringBuilder stb = new StringBuilder();
@@ -27,7 +30,7 @@ public class UniformesFimAno {
 		int qtdAlunos = scr.nextInt();
 		scr.nextLine();
 		
-		if (qtdAlunos < 1 && qtdAlunos >60) {
+		if (qtdAlunos < 1 || qtdAlunos >60) {
 			qtdAlunos = scr.nextInt();
 			scr.nextLine();
 		}
@@ -53,7 +56,7 @@ public class UniformesFimAno {
 //			}
 		}
 		
-		
+		scr.close();
 		
 		saida.sort(new Comparator<String>() {
 			@Override
@@ -84,9 +87,7 @@ public class UniformesFimAno {
 		
 		
 		saida.forEach(System.out::println);
-		
-		
-		scr.close();
+						
 	}
 
 }
