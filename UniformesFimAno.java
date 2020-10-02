@@ -50,7 +50,7 @@ public class UniformesFimAno {
 			qtdAlunos = scr.nextInt();
 			scr.nextLine();
 
-//			if (qtdAlunos < 0 && qtdAlunos >60) {
+//			if (qtdAlunos < 0 || qtdAlunos >60) {
 //				qtdAlunos = scr.nextInt();
 //				scr.nextLine();
 //			}
