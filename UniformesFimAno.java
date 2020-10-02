@@ -30,19 +30,18 @@ public class UniformesFimAno {
 		int qtdAlunos = scr.nextInt();
 		scr.nextLine();
 
-		if (qtdAlunos < 1 || qtdAlunos > 60) {
-			qtdAlunos = scr.nextInt();
-			scr.nextLine();
-		}
+//		if (qtdAlunos < 1 || qtdAlunos > 60) {
+//			qtdAlunos = scr.nextInt();
+//			scr.nextLine();
+//		}
 
 		while (qtdAlunos > 0) {
 
 			for (int i = 0; i < qtdAlunos; i++) {
 				nome = scr.nextLine();
 				corTamanho = scr.nextLine();
-				String[] corETamanho = corTamanho.split(" ");
-				cor = corETamanho[0];
-				tamanho = corETamanho[1];
+				cor = corTamanho.split(" ")[0];
+				tamanho = corTamanho.split(" ")[1];
 
 				saida.add(cor.toLowerCase().trim() + " " + tamanho.toUpperCase().trim() + " " + nome.trim());
 			}
