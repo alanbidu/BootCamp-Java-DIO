@@ -9,7 +9,7 @@ public class GincanaNoAcampamento {
 		Scanner scr = new Scanner(System.in);
 		
 		List<String> listaAlunos = new ArrayList<>(); 
-		List<String> vencedores = new ArrayList<>();
+//		List<String> vencedores = new ArrayList<>();
 		
 		int numeroDeAlunos;
 		String alunoFicha;
@@ -31,8 +31,6 @@ public class GincanaNoAcampamento {
 				listaAlunos.add(aluno.trim() + " " + valorFicha.trim());
 			}
 			
-			
-//			indiceTransitorio = 0;
 			indiceAtual = 0;
 			indiceAlunoEliminado = 0;
 			valorAtualFicha = Integer.parseInt(listaAlunos.get(indiceAtual).split(" ")[1]);
@@ -58,11 +56,11 @@ public class GincanaNoAcampamento {
 				
 			}
 			
-//			System.out.println(listaAlunos);
-//			System.out.println("Vencedor(a): " + listaAlunos.get(0).split(" ")[0]);
 			
-			vencedores.add(listaAlunos.get(0).split(" ")[0]);
-						
+//			vencedores.add(listaAlunos.get(0).split(" ")[0]);
+
+			System.out.println("Vencedor(a): " + listaAlunos.get(0).split(" ")[0]);
+			
 			listaAlunos.clear();
 			
 			numeroDeAlunos = scr.nextInt();
@@ -70,7 +68,7 @@ public class GincanaNoAcampamento {
 						
 		}
 			
-		vencedores.forEach(v -> System.out.println("Vencedor(a): " + v));
+//		vencedores.forEach(v -> System.out.println("Vencedor(a): " + v));
 		
 		scr.close();
 		
