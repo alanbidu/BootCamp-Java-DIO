@@ -17,7 +17,7 @@ public class UniformesFimAno {
 			public String toString() {
 				StringBuilder stb = new StringBuilder();
 				for (int i = 0; i < this.size(); i++) {
-					stb.append(this.get(i));
+					stb.append(this.get(i) + "\n");
 				}
 				return stb.toString();
 			}
@@ -110,7 +110,8 @@ public class UniformesFimAno {
 //			}
 //		});
 
-		saida.forEach(System.out::println);
+//		saida.forEach(System.out::println);
+		System.out.println(saida);
 
 	}
 
