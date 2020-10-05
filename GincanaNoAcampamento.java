@@ -12,21 +12,26 @@ public class GincanaNoAcampamento {
 //		List<String> vencedores = new ArrayList<>();
 		
 		int numeroDeAlunos;
-		String alunoFicha;
+//		String alunoFicha;
 		String aluno;
 		String valorFicha;
 		int valorAtualFicha;
 		int indiceAtual;
 		int indiceAlunoEliminado;
 		
-		numeroDeAlunos = scr.nextInt();
-		scr.nextLine();
+//		numeroDeAlunos = scr.nextInt();
+//		scr.nextLine();
+		
+		numeroDeAlunos = Integer.parseInt(scr.next());
 		
 		while (numeroDeAlunos > 0) {
 			for (int i = 0; i < numeroDeAlunos; i++) {
-				alunoFicha = scr.nextLine();
-				aluno = alunoFicha.split(" ")[0];
-				valorFicha =  alunoFicha.split(" ")[1];
+//				alunoFicha = scr.nextLine();
+//				aluno = alunoFicha.split(" ")[0];
+//				valorFicha =  alunoFicha.split(" ")[1];
+				
+				aluno = scr.next();
+				valorFicha = scr.next();
 				
 				listaAlunos.add(aluno.trim() + " " + valorFicha.trim());
 			}
@@ -35,9 +40,14 @@ public class GincanaNoAcampamento {
 			indiceAlunoEliminado = 0;
 			valorAtualFicha = Integer.parseInt(listaAlunos.get(indiceAtual).split(" ")[1]);
 			
+//			valorAtualFicha = (valorAtualFicha > 500 || valorAtualFicha < 1) ? 
+//					(valorAtualFicha > 500 ? 500 : (valorAtualFicha < 1 ? 1 : valorAtualFicha)) : valorAtualFicha;
+			
 			for (int i = 0; i < numeroDeAlunos - 1; i++) {
 
-				if (valorAtualFicha % 2 == 0) {
+				if (valorAtualFicha == 0) {
+					indiceAlunoEliminado = indiceAtual;
+				} else if (valorAtualFicha % 2 == 0) {
 					indiceAlunoEliminado = (listaAlunos.size() - (valorAtualFicha % listaAlunos.size()) + indiceAtual) % listaAlunos.size();
 					valorAtualFicha = Integer.parseInt(listaAlunos.get(indiceAlunoEliminado).split(" ")[1]);
 					listaAlunos.remove(indiceAlunoEliminado);
@@ -48,8 +58,10 @@ public class GincanaNoAcampamento {
 					listaAlunos.remove(indiceAlunoEliminado);
 				}
 				
+				
+				//Rever como calcular o indiceAtual
 				indiceAtual = (valorAtualFicha % 2 == 0) ? 
-						((indiceAlunoEliminado == listaAlunos.size() - 1) ? 
+						((indiceAlunoEliminado <= listaAlunos.size() - 1) ? 
 								indiceAlunoEliminado : 0):
 							((indiceAlunoEliminado == 0) ?
 								(listaAlunos.size() - 1):(indiceAlunoEliminado - 1));
@@ -63,8 +75,10 @@ public class GincanaNoAcampamento {
 			
 			listaAlunos.clear();
 			
-			numeroDeAlunos = scr.nextInt();
-			scr.nextLine();
+//			numeroDeAlunos = scr.nextInt();
+//			scr.nextLine();
+			
+			numeroDeAlunos = Integer.parseInt(scr.next());
 						
 		}
 			
