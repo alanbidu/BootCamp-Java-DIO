@@ -45,26 +45,22 @@ public class GincanaNoAcampamento {
 			
 			for (int i = 0; i < numeroDeAlunos - 1; i++) {
 
-				if (valorAtualFicha == 0) {
-					indiceAlunoEliminado = indiceAtual;
-				} else if (valorAtualFicha % 2 == 0) {
+				if (valorAtualFicha % 2 == 0) {
 					indiceAlunoEliminado = (listaAlunos.size() - (valorAtualFicha % listaAlunos.size()) + indiceAtual) % listaAlunos.size();
-					valorAtualFicha = Integer.parseInt(listaAlunos.get(indiceAlunoEliminado).split(" ")[1]);
-					listaAlunos.remove(indiceAlunoEliminado);
 					
 				} else if (valorAtualFicha % 2 != 0){
 					indiceAlunoEliminado = (valorAtualFicha % listaAlunos.size() + indiceAtual) % listaAlunos.size();
-					valorAtualFicha = Integer.parseInt(listaAlunos.get(indiceAlunoEliminado).split(" ")[1]);
-					listaAlunos.remove(indiceAlunoEliminado);
 				}
 				
+			valorAtualFicha = Integer.parseInt(listaAlunos.get(indiceAlunoEliminado).split(" ")[1]);
+			listaAlunos.remove(indiceAlunoEliminado);
 				
 				//Rever como calcular o indiceAtual
-				indiceAtual = (valorAtualFicha % 2 == 0) ? 
-						((indiceAlunoEliminado <= listaAlunos.size() - 1) ? 
-								indiceAlunoEliminado : 0):
-							((indiceAlunoEliminado == 0) ?
-								(listaAlunos.size() - 1):(indiceAlunoEliminado - 1));
+			indiceAtual = (valorAtualFicha % 2 == 0) ? 
+					((indiceAlunoEliminado <= listaAlunos.size() - 1) ? 
+							indiceAlunoEliminado : 0):
+						((indiceAlunoEliminado == 0) ?
+							(listaAlunos.size() - 1):(indiceAlunoEliminado - 1));
 				
 			}
 			
