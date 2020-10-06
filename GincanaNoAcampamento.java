@@ -55,7 +55,7 @@ public class GincanaNoAcampamento {
 			valorAtualFicha = Integer.parseInt(listaAlunos.get(indiceAlunoEliminado).split(" ")[1]);
 			listaAlunos.remove(indiceAlunoEliminado);
 				
-				//Rever como calcular o indiceAtual
+
 			indiceAtual = (valorAtualFicha % 2 == 0) ? 
 					((indiceAlunoEliminado <= listaAlunos.size() - 1) ? 
 							indiceAlunoEliminado : 0):
